@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="105px" height="71px" viewBox="0 0 105 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon" transform="translate(-76.000000, -64.000000)">
+            <g id="1x" transform="translate(65.000000, 36.000000)">
+                <rect id="Rectangle-7" x="0" y="0" width="126" height="126"></rect>
+                <g transform="translate(11.000000, 28.000000)" fill="#FFFFFF">
+                    <polygon id="x" points="67.9338104 17 77.1502683 31.4535316 86.667263 17 104.298748 17 85.765653 43.3977695 105 71 87.0679785 71 76.549195 56.1449814 66.3309481 71 49 71 67.8336315 43.4981413 50.0017889 17"></polygon>
+                    <polygon id="1" points="0 0 29 0 29 71 13.6289753 71 13.6289753 13.509299 0 13.509299"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

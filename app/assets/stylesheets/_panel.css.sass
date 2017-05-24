@@ -1,0 +1,519 @@
+$panel__side-padding: 64px
+$panel__medium-side-padding: 44px
+$panel__small-side-padding: 32px
+$panel__xsmall-side-padding: 16px
+$panel__award-block-size: 256px
+$panel__award-block-small-size: 208px
+$panel__form-control-side-padding: 16px
+$panel__file-upload-btn-width: 125px
+
+
+
+.panel
+  background: #fff
+  box-shadow: 0 3px 35px 0 rgba(0, 0, 0, .15)
+  padding: 44px $panel__side-padding $panel__side-padding
+  position: relative
+  margin-top: -95px
+
+  +respond-to(medium)
+    padding: 44px $panel__medium-side-padding $panel__medium-side-padding
+
+
+  +respond-to(small)
+    padding: 30px $panel__small-side-padding $panel__small-side-padding
+
+  +respond-to(xxsmall-xsmall)
+    margin-top: -90px
+    padding: $panel__award-block-size $panel__xsmall-side-padding $panel__xsmall-side-padding
+
+
+.panel__award
+  background: $blue
+  width: $panel__award-block-size
+  height: $panel__award-block-size
+  position: absolute
+  left: $panel__side-padding
+  top: -$panel__side-padding
+  padding-top: 64px
+  text-align: center
+
+  +respond-to(medium)
+    left: $panel__medium-side-padding
+    top: - $panel__medium-side-padding
+
+  +respond-to(small)
+    padding-top: 46px
+    left: $panel__small-side-padding
+    top: - $panel__small-side-padding
+    width: $panel__award-block-small-size
+    height: $panel__award-block-small-size
+
+  +respond-to(xxsmall-xsmall)
+    left: $panel__xsmall-side-padding
+    top: -23px
+
+.panel__award-multiplier
+  margin-bottom: 34px
+
+  +respond-to(small)
+    width: 92px
+
+.panel__award-text
+  +MontserratBold
+  font-size: rem(16)
+  line-height: rem(26)
+  color: #fff
+  margin: 0
+  text-transform: uppercase
+
+  +respond-to(small)
+    font-size: rem(14)
+    line-height: rem(20)
+
+.panel__award-text--big
+  font-size: rem(19)
+  line-height: rem(28)
+
+  +respond-to(small)
+    font-size: rem(16)
+    line-height: rem(20)
+
+.panel__intro-block
+  margin-left: $panel__award-block-size
+  padding-left: $panel__side-padding
+  margin-bottom: 36px
+
+  +respond-to(medium)
+    padding-left: $panel__medium-side-padding
+    margin-bottom: 15px
+
+  +respond-to(small)
+    padding-left: $panel__small-side-padding
+    margin-left: $panel__award-block-small-size
+    margin-bottom: 27px
+
+  +respond-to(xxsmall-xsmall)
+    margin-left: 0
+    padding-left: 0
+    margin-bottom: 18px
+
+.panel__title
+  +MontserratRegular
+  margin: 0 0 17px
+  line-height: rem(36)
+  color: #3c4c52
+
+  +respond-to(small)
+    font-size: rem(20)
+    line-height: rem(32)
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(18)
+    line-height: rem(28)
+
+.panel__text
+  margin: 0 0 16px
+  font-size: rem(18)
+  line-height: rem(28)
+
+  +respond-to(xxsmall-xsmall-small)
+    font-size: rem(16)
+    line-height: rem(24)
+
+.panel__section
+  padding-top: 17px
+  font-size: 0
+
+.panel__section-title
+  text-align: center
+  color: $black
+  margin: 0 0 32px
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(24)
+    line-height: rem(30)
+
+.panel__section-column
+  display: inline-block
+  vertical-align: top
+  +calc(width, "50% - 16px")
+  padding-right: 20px
+
+  &:nth-child(odd)
+    margin-right: 32px
+
+  +respond-to(medium)
+    padding-right: 0
+
+  +respond-to(xxsmall-xsmall-small)
+    width: 100%
+    padding-right: 0
+
+    &:nth-child(odd)
+      margin-right: 0
+      margin-bottom: 12px
+
+.panel__form-column
+  padding-right: 0
+
+  +respond-to(small)
+    +calc(width, "50% - 16px")
+
+    &:nth-child(odd)
+      margin-right: 32px
+      margin-bottom: 0
+
+  +respond-to(xxsmall-xsmall)
+    &:nth-child(odd)
+      margin-bottom: 0
+
+.panel__form
+  margin-bottom: 5px
+
+  +respond-to(medium)
+    margin-bottom: 6px
+
+  +respond-to(xxsmall-xsmall-small)
+    margin-bottom: 0
+
+.panel__form-group
+  position: relative
+  margin-bottom: 24px
+
+  +respond-to(xxsmall-xsmall)
+    margin-bottom: 16px
+
+.panel__form-label
+  +MontserratBold
+  text-transform: uppercase
+  font-size: rem(10)
+  line-height: rem(16)
+  color: $text-color
+
+  .panel__form-group--active &
+    color: $blue
+
+.panel__form-label--inline
+  position: absolute
+  left: $panel__form-control-side-padding
+  top: 10px
+
+.panel__form-control
+  +SourceSansRegular
+  font-size: rem(14)
+  line-height: rem(16)
+  color: $black
+  padding: 0 $panel__form-control-side-padding
+  border: 1px solid #bac8cc
+  border-radius: 3px
+
+  &:focus
+    border-color: $blue
+    box-shadow: 0 0 0 1px $blue inset
+    outline: none
+
+  .panel__form-group--error &
+    border-color: $red
+    box-shadow: 0 0 0 1px $red inset
+
+.panel__form-input,
+.panel__form-control--fake-file-input
+  height: 36px
+  width: 100%
+  margin-top: 5px
+  -webkit-appearance: none
+
+.panel__form-file-input
+  display: none
+
+.panel__form-input--inline
+  height: 58px
+  padding-top: 15px
+  margin-top: 0
+
+.panel__form-control--fake-file-input
+  position: relative
+  overflow: hidden
+  line-height: rem(36)
+  text-transform: initial
+  padding-right: $panel__form-control-side-padding + $panel__file-upload-btn-width
+
+.panel__file-upload-btn
+  +display(inline-flex)
+  +justify-content(center)
+  +align-items(center)
+  +MontserratBold
+  font-size: rem(10)
+  line-height: rem(20)
+  color: #fff
+  width: $panel__file-upload-btn-width
+  background: $blue
+  height: 100%
+  border: 0
+  position: absolute
+  top: 0
+  right: 0
+  text-transform: uppercase
+  cursor: pointer
+
+.panel__file-name
+  color: #8e9496
+
+  &.panel__file-name--fill
+    color: $black
+
+.panel__form-footer
+  text-align: center
+  padding-top: 8px
+
+.panel__form-submit-block
+  display: inline-block
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    top: 50%
+    margin-top: -7px
+    left: 40px
+    width: 22px
+    height: 15px
+    background: image-url('icons/scholarship_upload.svg') no-repeat
+    background-size: cover
+    pointer-events: none
+
+    +respond-to(xxsmall-xsmall)
+      left: 36px
+
+.panel__submit-btn
+  @extend %button
+  @extend %button--green
+  border: 0
+  height: 60px
+  line-height: rem(60)
+  border-radius: 30px
+  font-size: rem(14)
+  padding: 0 40px 0 76px
+  cursor: pointer
+
+  &[disabled]
+    background: #cfd6d8
+    opacity: 1
+    cursor: default
+
+  &:focus
+    outline: none
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(13)
+    width: 100%
+    padding: 0 34px 0 70px
+
+.panel__form-hint
+  +SourceSansRegular
+  font-size: rem(14)
+  line-height: rem(22)
+  color: #a1afb3
+  margin-top: 8px
+
+.panel__file-format
+  +MontserratBold
+  font-size: rem(10)
+  line-height: rem(15)
+  padding: 0 4px
+  border-radius: 2px
+  color: #fff
+  text-transform: uppercase
+  display: inline-block
+  margin: 0 2px
+
+.panel__file-format--pdf
+  background: $red
+
+.panel__file-format--doc
+  background: #2666c3
+
+.panel__file-format--jpg
+  background: $blue
+
+.panel__form-tooltip
+  +SourceSansSemiBold
+  font-size: rem(12)
+  line-height: rem(16)
+  color: #fff
+  background: rgba(39, 52, 56, .95)
+  padding: 9px 12px
+  border-radius: 2px
+  position: absolute
+  bottom: 100%
+  right: 0
+  opacity: 0
+  visibility: hidden
+  margin-bottom: 0
+  +transition(all .4s ease-out)
+
+  &:after
+    content: ''
+    position: absolute
+    right: 6px
+    bottom: -5px
+    border-left: 4px solid transparent
+    border-right: 4px solid transparent
+    border-top: 5px solid rgba(39, 52, 56, .95)
+
+  .panel__form-group--error &
+    opacity: 1
+    visibility: visible
+    margin-bottom: 8px
+
+  .panel__form-group--error.panel__form-group--file &
+    margin-bottom: -15px
+
+.panel__column-title
+  color: $black
+  position: relative
+  padding-left: 45px
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(16)
+    margin-bottom: 21px
+    padding-left: 37px
+
+.panel__title-icon
+  position: absolute
+  top: 3px
+  left: 1px
+
+  &,
+  svg
+    display: block
+
+.panel__list
+  +reset-list
+
+  +respond-to(xxsmall-xsmall)
+    padding-left: 11px
+
+.panel__list-counter,
+.panel__list-item,
+.panel__sub-list-item
+  font-size: rem(16)
+  line-height: rem(24)
+  color: $text-color
+
+.panel__list-item
+  position: relative
+  padding-left: 25px
+
+  &:not(:last-child)
+    margin-bottom: 16px
+
+.panel__list-counter
+  position: absolute
+  left: 0
+  top: 0
+
+.panel__sub-list
+  +reset-list
+  padding-top: 12px
+
+  .panel__accordion &
+    padding-left: 34px
+
+    &:not(:last-child)
+      margin-bottom: 11px
+
+      +respond-to(small)
+        margin-bottom: 16px
+
+  +respond-to(small)
+    padding-top: 14px
+
+.panel__sub-list-item
+  +SourceSansSemiBold
+  color: $black
+  position: relative
+  padding-left: 28px
+
+  &:not(:last-child)
+    margin-bottom: 16px
+
+  &:before
+    content: ''
+    position: absolute
+    top: 6px
+    left: 0
+    width: 16px
+    height: 16px
+    background: image-url('icons/scholarship_check-mark.svg') no-repeat
+
+.panel__accordion
+  +reset-list
+
+.panel__accordion-item
+  &:not(:last-child)
+    margin-bottom: 24px
+
+    +respond-to(xxsmall-xsmall-small)
+      margin-bottom: 16px
+
+.panel__accordion-link
+  +SourceSansBold
+  font-size: rem(16)
+  line-height: rem(24)
+  color: #0090d9
+  position: relative
+
+  &:after
+    content: ''
+    display: inline-block
+    position: relative
+    top: -2px
+    margin-left: 8px
+    width: 8px
+    height: 8px
+    border-left: 2px solid #a1afb3
+    border-bottom: 2px solid #a1afb3
+    +transform(rotate(-45deg))
+
+  .panel__accordion-item--active &
+    color: $black
+    cursor: default
+
+    &:after
+      top: 1px
+      +transform(rotate(45deg) scaleY(-1))
+
+.panel__accordion-link-text
+  border-bottom: 1px dotted
+
+  .panel__accordion-item--active &
+    border-bottom: 0
+
+.panel__accordion-content
+  padding-top: 8px
+  display: none
+
+  // Show by default
+  .panel__accordion-item:first-child &
+    display: block
+
+  +respond-to(xxsmall-xsmall)
+    padding-top: 16px
+
+.panel__section-text
+  font-size: rem(16)
+  line-height: rem(24)
+  margin: 0
+
+  + &
+    margin-top: 16px
+
+  b
+    +SourceSansSemiBold
+    color: $black
+
+.panel__hint
+  font-size: rem(14)
+  line-height: rem(20)

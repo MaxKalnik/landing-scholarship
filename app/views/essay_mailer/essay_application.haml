@@ -1,0 +1,28 @@
+%p
+First name:
+= @essay_application.first_name
+
+%p
+Last name:
+= @essay_application.last_name
+
+%p
+Email:
+= @essay_application.email
+
+%p
+Phone:
+= @essay_application.phone
+
+%p
+= link_to 'Photo', @essay_application.photo.url
+
+%p
+= link_to 'Transcript', @essay_application.transcript.url
+
+%p
+= link_to 'Recommendation', @essay_application.recommendation.url
+
+- @essay_application.essays.each do |essay|
+  %p
+  = link_to 'Essay', essay.essay.url

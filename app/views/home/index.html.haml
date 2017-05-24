@@ -1,0 +1,27 @@
+= render 'hero'
+
+.container
+  = render 'panel'
+  = render 'winners'
+.main__footer
+  .container
+    %h3.main__title
+      Don’t miss your chance to apply for the opportunity to travel and experience new cultures!
+
+  %picture.main__footer-img
+    %source{ srcset: "#{image_path('scholarship_people.jpg')}, #{image_path('scholarship_people@2x.jpg')} 2x" }
+    %img{ srcset: "#{image_path('scholarship_people.jpg')}, #{image_path('scholarship_people@2x.jpg')} 2x", alt: 'People' }
+
+- css_modifier = @submited.present? ? 'modal--visible' : ''
+%div{class: "modal #{css_modifier}"}
+  .modal__block
+    = link_to '#', class: 'modal__close' do
+      = render 'shared/icons/close'
+
+    %h3.modal__title
+      %span.modal__title-icon
+        = render 'shared/icons/check_icon'
+      Thank you for your submission
+
+    %p.modal__text
+      Your files were successfully uploaded.

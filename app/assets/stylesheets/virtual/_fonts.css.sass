@@ -1,0 +1,28 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700'
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700'
+
+=Montserrat-font($weight)
+  font-family: 'Montserrat', sans-serif
+  font-weight: $weight
+
+=SourceSans-font($weight)
+  font-family: 'Source Sans Pro', sans-serif
+  font-weight: $weight
+
+=SourceSansLight
+  +SourceSans-font(300)
+
+=SourceSansRegular
+  +SourceSans-font(400)
+
+=SourceSansSemiBold
+  +SourceSans-font(600)
+
+=SourceSansBold
+  +SourceSans-font(700)
+
+=MontserratRegular
+  +Montserrat-font(400)
+
+=MontserratBold
+  +Montserrat-font(700)

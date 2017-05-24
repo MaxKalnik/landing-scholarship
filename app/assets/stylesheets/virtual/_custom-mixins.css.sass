@@ -1,0 +1,86 @@
+$break-small: 768px
+$break-medium: 1024px
+$break-xmedium: 1440px
+
+=break-lines
+  -ms-word-break: break-all
+  word-break: break-all
+  word-wrap: break-word
+
+=flex-alignment($horizontal-alignment, $vertical-alignment)
+  +display(flex)
+  +justify-content($horizontal-alignment)
+  +align-items($vertical-alignment)
+
+=font-smoothing
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+=force-GPU
+  +transform(translateZ(0))
+
+=respond-to($media)
+  @if $media == xxsmall-xsmall
+    @media only screen and (max-width: $break-small - 1px)
+      @content
+
+  @else if $media == xxsmall-xsmall-small
+    @media only screen and (max-width: $break-medium - 1px)
+      @content
+
+  @else if $media == small
+    @media only screen and (min-width: $break-small) and (max-width: $break-medium - 1px)
+      @content
+
+  @else if $media == small-medium
+    @media only screen and (min-width: $break-small) and (max-width: $break-xmedium - 1px)
+      @content
+
+  @else if $media == medium
+    @media only screen and (min-width: $break-medium) and (max-width: $break-xmedium - 1px)
+      @content
+
+  @else if $media == medium-xmedium-large-xlarge
+    @media only screen and (min-width: $break-medium)
+      @content
+
+  @else if $media == xxsmall-medium
+    @media only screen and (max-width: $break-xmedium - 1px)
+      @content
+
+  @else if $media == webkit
+    @media (-webkit-min-device-pixel-ratio: 0)
+      @content
+
+  @else
+    @media only screen and (max-width: $media)
+      @content
+
+=respond-to-height($height)
+  @media all and (max-height: $height)
+    @content
+
+=respond-to-max($width)
+  @media all and (max-width: $width)
+    @content
+
+=respond-to-ie
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    @content
+
+=respond-to-edge
+  @supports (-ms-accelerator: true)
+    @content
+
+=respond-to-retina
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2)
+    @content
+
+=reset-list
+  padding: 0
+  margin: 0
+  list-style: none
+
+=fluid-img
+  max-width: 100%
+  height: auto

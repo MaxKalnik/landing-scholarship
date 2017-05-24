@@ -1,0 +1,23 @@
+.footer
+  .container.footer__inner
+    %p.footer__copyright
+      © 2016 RewardExpert.com, Inc. All Rights Reserved
+
+    %ul.footer__social-nav
+      %li.footer__social-item
+        = link_to 'https://www.facebook.com/rewardexpert', class: 'footer__social-link footer__social-link--facebook', target: '_blank' do
+          = render 'shared/icons/facebook'
+
+      %li.footer__social-item
+        = link_to 'https://twitter.com/RewardExpert', class: 'footer__social-link footer__social-link--twitter', target: '_blank' do
+          = render 'shared/icons/twitter'
+
+      %li.footer__social-item
+        = link_to 'https://plus.google.com/u/0/+RewardexpertOfficial', class: 'footer__social-link footer__social-link--google-plus', target: '_blank' do
+          = render 'shared/icons/google_plus'
+
+    %ul.footer__nav
+      %li.footer__nav-item
+        = link_to 'About Us', 'https://www.rewardexpert.com/about', class: 'footer__nav-link', target: '_blank'
+      %li.footer__nav-item
+        = link_to 'Contact Us', 'https://www.rewardexpert.com/contacts', class: 'footer__nav-link', target: '_blank'

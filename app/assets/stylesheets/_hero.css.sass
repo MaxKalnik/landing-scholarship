@@ -1,0 +1,104 @@
+.hero
+  height: 800px
+  position: relative
+  background-image: image-url('scholarship_hero-bg.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  overflow: hidden
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 78%
+    height: 100%
+    opacity: .7
+    +linear-gradient(-80deg, rgba(29, 40, 44, 0) 3%, rgba(18, 29, 47, .74) 100%)
+
+  &:after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: -5px
+    height: 80px
+    background: $body-bg
+    +calc(width, "100% + 5px")
+    +transform(rotate(2deg))
+    +transform-origin(left)
+
+  +respond-to-retina
+    background-image: image-url('scholarship_hero-bg@2x.jpg')
+
+  +respond-to(medium)
+    height: 750px
+
+    &:before
+      width: 100%
+
+  +respond-to(small)
+    height: 662px
+
+    &:before
+      width: 90%
+
+  +respond-to(xxsmall-xsmall)
+    height: auto
+    min-height: 470px
+
+    &:before
+      width: 100%
+      +linear-gradient(-80deg, rgba(29, 40, 44, 0) 3%, rgba(18, 29, 47, 1) 100%)
+
+.hero__content
+  padding-top: 118px
+  color: #fff
+  max-width: 570px
+  position: relative
+
+  +respond-to(small)
+    padding-top: 81px
+    max-width: 430px
+
+  +respond-to(xxsmall-xsmall)
+    padding-top: 20px
+
+.hero__hint
+  +SourceSansRegular
+  font-style: italic
+  color: rgba(255, 255, 255, .7)
+  font-size: rem(14)
+  line-height: rem(20)
+  margin: 0 0 32px
+
+  +respond-to(small)
+    margin-bottom: 37px
+
+  +respond-to(xxsmall-xsmall)
+    margin-bottom: 26px
+
+.hero__title
+  margin: 0 0 38px
+  line-height: rem(50)
+
+  +respond-to(small)
+    font-size: rem(32)
+    line-height: rem(46)
+    margin-bottom: 30px
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(24)
+    line-height: rem(32)
+    margin-bottom: 20px
+
+.hero__text
+  font-style: italic
+  font-size: rem(24)
+  line-height: rem(32)
+  color: #fff
+  margin: 0
+
+  +respond-to(xxsmall-xsmall)
+    font-size: rem(16)
+    line-height: rem(24)

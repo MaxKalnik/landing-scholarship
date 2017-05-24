@@ -1,0 +1,163 @@
+$winners__side-padding: 64px
+$winners__medium-side-padding: 44px
+$winners__small-side-padding: 32px
+$winners__xsmall-side-padding: 16px
+
+$winners__vertical-padding: 64px
+$winners__small-vertical-padding: 44px
+
+
+.winners 
+  display: block
+  padding-top: $winners__vertical-padding
+  padding-left: $winners__side-padding
+  padding-right: $winners__side-padding
+  padding-bottom: $winners__vertical-padding
+
+  margin-bottom: 27.5%
+  color: #FFFFFF
+  box-shadow: 0 3px 35px 0 rgba(0, 0, 0, 0.15)
+
+  background-image: url('ribbon_left.png'), url('ribbon_right.png'), linear-gradient(to bottom right, rgba(0, 147, 236, 1), rgba(2, 125, 216, 1))
+  background-repeat: no-repeat
+  background-position: 0% 0%, 101% -1%, center
+  background-size: auto, auto, auto
+
+  +respond-to-retina
+    background-image: url('ribbon_left@2x.png'), url('ribbon_right@2x.png'), linear-gradient(to bottom right, rgba(0, 147, 236, 1), rgba(2, 125, 216, 1))
+    background-size: 157px 226px, 536px 340px, auto
+
+  +respond-to(medium)
+    padding-left: $winners__medium-side-padding
+    padding-right: $winners__medium-side-padding
+    background-position: -1% 0%, 103% 0%, center, center
+    background-size: 157px 226px, 536px 340px, auto
+
+  +respond-to(small)
+    padding-top: $winners__small-vertical-padding
+    padding-left: $winners__small-side-padding
+    padding-right: $winners__small-side-padding
+    background-image: url('ribbon_right.png'), linear-gradient(to bottom right, rgba(0, 147, 236, 1), rgba(2, 125, 216, 1))
+    background-position: 106% -3%, center
+    background-size: 429px 272px, auto
+  
+  +respond-to(xxsmall-xsmall)
+    padding-top: 24px
+    padding-bottom: 33px
+    padding-left: $winners__xsmall-side-padding
+    padding-right: $winners__xsmall-side-padding
+    background-image: url('ribbon_right.png'), linear-gradient(to bottom right, rgba(0, 147, 236, 1), rgba(2, 125, 216, 1))
+    background-position: 88% -1%, center
+    background-size: 429px 272px, auto
+
+.winners__title
+  max-width: 1100px
+  margin-top: 0
+  margin-bottom: 12px
+  text-align: center
+  font-family: "Montserrat"
+  font-size: rem(24)
+  color: #FFFFFF
+  letter-spacing: 0
+  line-height: rem(29)
+  font-weight: 700 
+
+  +respond-to(medium)
+    max-width: 900px 
+
+  +respond-to(small)
+    text-align: left
+
+  +respond-to(xxsmall-xsmall)
+    text-align: left
+    font-size: rem(24)
+    line-height: rem(29)
+    margin-bottom: 18px
+
+.winners__text
+  max-width: 1100
+  margin: 0
+  margin-bottom: 64px
+  text-align: center
+  font-family: "Source Sans Pro"
+  color: #FFFFFF
+  font-size: rem(18)
+  line-height: rem(28)
+  font-weight: 500    
+
+  +respond-to(medium)
+    max-width: 900px
+    margin-bottom: 44px
+
+  +respond-to(small)
+    margin-bottom: 32px
+    text-align: left
+
+  +respond-to(xxsmall-xsmall)
+    margin-bottom: 24px
+    text-align: left
+
+
+.winners__testimonials 
+  position: relative
+  margin-bottom: 64px
+  &:last-child 
+    margin-bottom: 0
+  +respond-to(medium)
+    margin-bottom: 44px
+
+  +respond-to(small)
+    margin-bottom: 32px
+
+  +respond-to(xxsmall-xsmall)
+    margin-bottom: 32px
+
+
+.quotes 
+  font-size: rem(24)
+  font-weight: 300
+  line-height: rem(24)
+
+.testimonials__text
+  margin: 0
+  margin-bottom: 12px
+  padding-left: 108px
+  color: #FFFFFF
+  font-family: "Source Sans Pro"
+  font-size: rem(16)
+  font-weight: 500
+  line-height: rem(24)
+
+  +respond-to(xxsmall-xsmall)
+    padding-left: 0
+    margin-bottom: 0
+
+.testimonials__author
+  padding-left: 108px
+  color: #FFFFFF
+  font-family: "Source Sans Pro"
+  font-size: rem(16)
+  font-weight: italic
+  line-height: rem(24)
+
+  +respond-to(xxsmall-xsmall)
+    position: absolute
+    padding-left: 0
+    left: 56px
+    top: 10px
+
+
+.testimonials__img
+  float: left
+  width: 84px
+  height: 84px
+  font-size: 24px
+  color: #FFFFFF
+  line-height: 24px
+  border-radius: 50%
+  +respond-to(xxsmall-xsmall)
+    float: none
+    width: 44px
+    height: 44px
+    margin-bottom: 16px
+

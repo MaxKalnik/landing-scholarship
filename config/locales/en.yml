@@ -1,0 +1,49 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  mail_form:
+    errors:
+      models:
+        essay:
+          attributes:
+            email:
+              blank: 'Please enter a valid email'
+              invalid: 'Please enter a valid email'
+            phone:
+              blank: 'Please enter a valid phone number'
+              invalid: 'Please enter a valid phone number'
+            first_name:
+              blank: 'Please enter a valid first name'
+              invalid: 'Please enter a valid first name'
+            last_name:
+              blank: 'Please enter a valid last name'
+              invalid: 'Please enter a valid last name'
+
+  errors:
+    messages:
+      wrong_size: "is the wrong size"
+      size_too_small: "is too small"
+      size_too_big: "Sorry! Wrong file size. You cannot upload more than 10 Mb."
+      extension_white_list_error: "You are not allowed to upload %{extension} files"
+      extension_black_list_error: "You are not allowed to upload %{extension} files"

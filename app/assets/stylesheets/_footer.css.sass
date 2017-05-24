@@ -1,0 +1,117 @@
+.footer
+  height: $footer-height
+  margin-top: - $footer-height
+  background: $dark-blue
+
+  +respond-to(small)
+    height: $footer-small-height
+    margin-top: - $footer-small-height
+
+  +respond-to(xxsmall-xsmall)
+    height: $footer-xsmall-height
+    margin-top: - $footer-xsmall-height
+
+.footer__inner
+  +display(flex)
+  +justify-content(space-between)
+  +align-items(center)
+  height: 100%
+  position: relative
+
+  +respond-to(small)
+    padding-bottom: 24px
+
+  +respond-to(xxsmall-xsmall)
+    padding-top: 47px
+
+.footer__copyright
+  +MontserratBold
+  font-size: rem(9)
+  line-height: rem(20)
+  color: #fff
+  opacity: .3
+  text-transform: uppercase
+  margin: 0
+
+  +respond-to(small)
+    padding-top: 80px
+
+.footer__nav
+  +reset-list
+  font-size: 0
+
+  +respond-to(xxsmall-xsmall)
+    position: absolute
+    right: 0
+    top: 21px
+
+.footer__nav-item
+  display: inline-block
+
+  &:not(:first-child)
+    margin-left: 35px
+
+    +respond-to(xxsmall-xsmall)
+      margin-left: 16px
+
+.footer__nav-link
+  +MontserratBold
+  text-transform: uppercase
+  font-size: rem(10)
+  line-height: rem(20)
+  color: #fff
+  opacity: .3
+
+  &:hover
+    opacity: 1
+
+.footer__social-nav
+  +reset-list
+  font-size: 0
+  position: absolute
+  left: 50%
+  top: 50%
+  +transform(translate(-50%, -50%))
+
+  +respond-to(xxsmall-xsmall-small)
+    left: 0
+    top: 25px
+    +transform(translate(0))
+
+  +respond-to(xxsmall-xsmall)
+    top: 16px
+
+.footer__social-item
+  display: inline-block
+  vertical-align: top
+
+  &:not(:last-child)
+    margin-right: 16px
+
+.footer__social-link
+  +display(inline-flex)
+  +align-items(center)
+  +justify-content(center)
+  width: 32px
+  height: 32px
+  border-radius: 50%
+  border: 1px solid rgba(255, 255, 255, .5)
+
+  svg
+    opacity: .5
+
+  &:hover
+    svg
+      opacity: 1
+
+.footer__social-link--facebook:hover
+  border-color: #4f71a6
+  background: #4f71a6
+
+.footer__social-link--twitter:hover
+  border-color: #20bcf0
+  background: #20bcf0
+
+.footer__social-link--google-plus:hover
+  border-color: #e14129
+  background: #e14129

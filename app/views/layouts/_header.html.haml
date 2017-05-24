@@ -1,0 +1,19 @@
+.header
+  .container.header__inner
+    = link_to '/', class: 'header__logo', target: '_blank' do
+      = image_tag 'scholarship_logo.svg', alt: 'RewardExpert'
+
+    %ul.header__nav
+      %li.header__nav-item
+        = link_to 'About Us', 'https://www.rewardexpert.com/about', class: 'header__nav-link', target: '_blank'
+      %li.header__nav-item
+        = link_to 'Contact Us', 'https://www.rewardexpert.com/contacts', class: 'header__nav-link', target: '_blank'
+      %li.header__nav-item.header__nav-item--btn
+        = link_to '#', class: 'header__btn header__btn--upload' do
+          %span.header__btn-icon
+            = render 'shared/icons/upload'
+          Upload Your Essays
+
+      = link_to '', '#', class: 'header__close-btn'
+
+    = link_to '', '#', class: 'header__toggle-btn'

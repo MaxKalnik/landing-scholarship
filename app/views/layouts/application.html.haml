@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %title
+      RewardExpert Scholarship
+
+    %meta{ content: 'width = device-width, initial-scale = 1, maximum-scale = 1', name: 'viewport' }
+    %meta{name: 'description', content: 'Apply for the RewardExpert scholarship and you could earn $1,000 towards your education!'}
+
+    = stylesheet_link_tag    'scholarship_application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    - if ENV['INTERCOM_ID'].present? && !Rails.env.test?
+      = render 'third_party_scripts/intercom_acquire_settings'
+      = render 'third_party_scripts/intercom'
+
+    - if ENV['GOOGLE_ANALYTICS_KEY'].present? && !Rails.env.test?
+      = render 'third_party_scripts/google_analytics'
+
+    - if ENV['YANDEX_METRICA_ID'].present? && !Rails.env.test?
+      = render 'third_party_scripts/yandex_metrica'
+
+  %body
+    .main
+      = yield
+
+    = render 'layouts/footer'
+
+    = javascript_include_tag 'scholarship_application'
+    = yield :javascript

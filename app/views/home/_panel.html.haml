@@ -1,0 +1,293 @@
+.panel
+  .panel__award
+    = image_tag 'icons/scholarship_1x.svg', alt: '1x multiplier', class: 'panel__award-multiplier'
+    %p.panel__award-text
+      $1,000 Scholarship
+    %p.panel__award-text.panel__award-text--big
+      will be awarded
+
+  .panel__intro-block
+    %h3.panel__title
+      The RewardExpert Study Abroad Scholarship is established to help students pursue their
+      higher education in new countries
+    %p.panel__text
+      The scholarship is designed to assist with the cost of tuition, travel expenses, room,
+      or board for students pursuing study abroad opportunities.
+
+  %p.panel__text
+    One $1,000 scholarship will be awarded annually to deserving undergraduate students who are attending an
+    accredited 2- or 4-year college within the United States of America.
+
+  .panel__section
+    %h2.panel__section-title
+      Upload Your Essays
+
+    .panel__form
+      = form_for @mail, url: '/scholarship/home/submit', html: {novalidate: 'novalidate'} do |f|
+        .panel__form-row
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:first_name]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group #{additional_class}"}
+              = f.label :first_name, 'First Name', class: 'panel__form-label panel__form-label--inline'
+              = f.text_field :first_name, class: 'panel__form-control panel__form-input panel__form-input--inline', |
+                  placeholder: 'Enter your first name', maxlength: 40                                               |
+
+              .panel__form-tooltip
+                - if validation_messages.present?
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+                - else
+                  Please enter a valid first name
+
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:last_name]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group #{additional_class}"}
+
+              = f.label :last_name, 'Last Name', class: 'panel__form-label panel__form-label--inline'
+              = f.text_field :last_name, class: 'panel__form-control panel__form-input panel__form-input--inline', |
+                  placeholder: 'Enter your last name', maxlength: 40                                               |
+              .panel__form-tooltip
+                - if validation_messages.present?
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+                - else
+                  Please enter a valid last name
+
+        .panel__form-row
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:email]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group #{additional_class}"}
+              = f.label :email, 'Contact email', class: 'panel__form-label panel__form-label--inline'
+              = f.email_field :email, class: 'panel__form-control panel__form-input panel__form-input--inline', placeholder: 'ex. some@example.com', validate: false
+              .panel__form-tooltip
+                - if validation_messages.present?
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+                - else
+                  Please enter a valid email
+
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:phone]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group #{additional_class}"}
+
+              = f.label :phone, 'Contact Phone', class: 'panel__form-label panel__form-label--inline'
+              = f.phone_field :phone, class: 'panel__form-control panel__form-input panel__form-input--inline', placeholder: '+1-555-555-0000'
+              .panel__form-tooltip
+                - if validation_messages.present?
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+                - else
+                  Please enter a valid phone number
+
+        .panel__form-row
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:photo]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group panel__form-group--file #{additional_class}"}
+              = f.label :photo, class: 'panel__form-label' do
+                Headshot
+
+                = f.file_field :photo, class: 'panel__form-control panel__form-file-input'
+                .panel__form-control.panel__form-control--fake-file-input
+                  %span.panel__file-name
+                    Choose file ...
+                  %span.panel__file-upload-btn
+                    Browse files...
+              - if validation_messages.present?
+                .panel__form-tooltip
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+
+              %p.panel__form-hint
+                We accept only
+                %span.panel__file-format.panel__file-format--jpg
+                  jpg
+                format for cover photo.
+
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:essays]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group panel__form-group--file #{additional_class}"}
+
+              = f.label :essays, class: 'panel__form-label' do
+                2 Essays
+
+                = f.file_field :essays, class: 'panel__form-control panel__form-file-input', multiple: true
+                .panel__form-control.panel__form-control--fake-file-input
+                  %span.panel__file-name
+                    Choose files ...
+                  %span.panel__file-upload-btn
+                    Browse files...
+
+              - if validation_messages.present?
+                .panel__form-tooltip
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+
+              %p.panel__form-hint
+                We accept only
+                %span.panel__file-format.panel__file-format--pdf
+                  pdf
+                and Word
+                %span.panel__file-format.panel__file-format--doc
+                  doc
+                format for essays.
+
+        .panel__form-row
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:transcript]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group panel__form-group--file #{additional_class}"}
+
+              = f.label :transcript, class: 'panel__form-label' do
+                Transcript
+
+                = f.file_field :transcript, class: 'panel__form-control panel__form-file-input'
+                .panel__form-control.panel__form-control--fake-file-input
+                  %span.panel__file-name
+                    Choose file ...
+                  %span.panel__file-upload-btn
+                    Browse files...
+              - if validation_messages.present?
+                .panel__form-tooltip
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+
+          .panel__section-column.panel__form-column
+            - validation_messages = @mail.errors[:recommendation]
+            - additional_class = validation_messages.present? ? 'panel__form-group--error' : ''
+            %div{class: "panel__form-group panel__form-group--file #{additional_class}"}
+
+              = f.label :recommendation, class: 'panel__form-label' do
+                Recommendation
+
+                = f.file_field :recommendation, class: 'panel__form-control panel__form-file-input'
+                .panel__form-control.panel__form-control--fake-file-input
+                  %span.panel__file-name
+                    Choose file ...
+                  %span.panel__file-upload-btn
+                    Browse files...
+              - if validation_messages.present?
+                .panel__form-tooltip
+                  - validation_messages.each do |validation_message|
+                    = validation_message
+
+        .panel__form-footer
+          .panel__form-submit-block
+            .rewardexpert__mobile-invisible
+              = f.submit class: 'panel__submit-btn', value: 'Upload your essays to win the award', disabled: true
+            .rewardexpert__mobile-visible
+              = f.submit class: 'panel__submit-btn', value: 'Upload your essays', disabled: true
+
+  .panel__section
+    .panel__section-column
+      %h3.panel__column-title
+        %span.panel__title-icon
+          = render 'shared/icons/requirements'
+        Scholarship Requirements
+
+      %ul.panel__list
+        %li.panel__list-item
+          %span.panel__list-counter
+            1.
+          Must be an undergraduate student at an accredited university with in the U.S.
+
+        %li.panel__list-item
+          %span.panel__list-counter
+            2.
+          Must be attending a 2- or 4- year college during the 2017-18 school year.
+
+        %li.panel__list-item
+          %span.panel__list-counter
+            3.
+          Minimum cumulative GPA must be 3.3/4.0.
+
+        %li.panel__list-item
+          %span.panel__list-counter
+            4.
+          Applicants must be in the process of applying to, or accepted to,
+          a study abroad program that is eligible for credit from the student’s
+          home institution.
+
+        %li.panel__list-item
+          %span.panel__list-counter
+            5.
+          Fill out the short biographical information on the landing page
+          and upload all required documents at the same time:
+
+          %ul.panel__sub-list
+            %li.panel__sub-list-item
+              2 Essays
+            %li.panel__sub-list-item
+              Copy of official university or college transcript with school seal (high school or college)
+            %li.panel__sub-list-item
+              Recommendation letter by professor/academic advisor on school letterhead; signed, dated and including their contact information (max. 1 page)
+
+        %li.panel__list-item
+          %span.panel__list-counter
+            6.
+          All documents must be submitted by November 15, 2017 (5:00 p.m. EST) via the scholarship landing page. No applications will be accepted through any other means. No late documents.
+
+    .panel__section-column
+      %h3.panel__column-title
+        %span.panel__title-icon
+          = render 'shared/icons/faq'
+        Frequently Asked Questions
+
+      %ul.panel__accordion
+        %li.panel__accordion-item.panel__accordion-item--active
+          = link_to '#', class: 'panel__accordion-link' do
+            %span.panel__accordion-link-text
+              What are the requirements for the student essays?
+
+          .panel__accordion-content
+            %p.panel__section-text
+              The essays must each be 250 words or less, typed, and address these topics:
+            %ul.panel__sub-list
+              %li.panel__sub-list-item
+                Essay #1: How does study abroad fit into your academic and career goals?
+              %li.panel__sub-list-item
+                Essay #2: What is your ideal travel itinerary - for any length of
+                time and to any number of destinations - and why?
+            %p.panel__section-text
+              Number your essays and copy the essay question at the top.
+              Add your own title.
+              %b
+                Essays to be judged on mechanics, organization, and uniqueness.
+
+        %li.panel__accordion-item
+          = link_to '#', class: 'panel__accordion-link' do
+            %span.panel__accordion-link-text
+              What designates an oﬀicial transcript?
+
+          .panel__accordion-content
+            %p.panel__section-text
+              An official transcript must have recorded classes, grades, and grade point averages achieved starting from the first semester of your first year of college until your current semester. The transcript must have a an official school seal.
+
+        %li.panel__accordion-item
+          = link_to '#', class: 'panel__accordion-link' do
+            %span.panel__accordion-link-text
+              Who should write the recommendation letter? What factors are judged?
+
+          .panel__accordion-content
+            %p.panel__section-text
+              A professor/academic advisor can write the recommendation letter. It must be on university letterhead; signed, dated and including their contact information. The letter must state the capacity in which the nominator knows the candidate and address these areas: academic ability, demonstrated leadership skills, community involvement/extracurricular activities/work experience, and personal qualities.
+            %p.panel__hint
+              *For the first-year college student, the teacher/guidance counselor can reflect on both
+              the student’s high school and college involvement and be employed at either the high
+              school or college level.
+
+        %li.panel__accordion-item
+          = link_to '#', class: 'panel__accordion-link' do
+            %span.panel__accordion-link-text
+              When will the scholarships be awarded? What is expected of the winners?
+
+          .panel__accordion-content
+            %p.panel__section-text
+              The scholarship recipients will be announced online by
+              %b December 30, 2017
+              and will be notified prior to this public announcement via email. The award winners will be expected to submit a short (<100 word) essay describing their future plans (course of study/study abroad ambitions) and what the scholarship means to them. Recipients will also complete a Testimonial Release Form.

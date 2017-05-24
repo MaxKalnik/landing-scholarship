@@ -1,0 +1,106 @@
+.header
+  padding-top: 32px
+  position: relative
+
+.header__inner
+  +display(flex)
+  +align-items(center)
+  +justify-content(space-between)
+
+  +respond-to(xxsmall-xsmall)
+    position: relative
+
+.header__nav
+  +reset-list
+  font-size: 0
+
+  +respond-to(xxsmall-xsmall)
+    display: none
+    position: absolute
+    width: $container-xsmall-width
+    top: -16px
+    border-radius: 3px
+    right: 0
+    background: #fff
+    overflow: hidden
+    padding-top: 8px
+    z-index: 1
+
+.header__nav--active
+  display: block
+
+.header__nav-item
+  display: inline-block
+  margin-left: 30px
+
+  +respond-to(xxsmall-xsmall)
+    display: block
+    margin-left: 0
+    padding: 0 24px
+
+.header__nav-item--btn
+  +respond-to(xxsmall-xsmall)
+    text-align: center
+    background: #f5f6f7
+    padding: 16px 0
+    margin-top: 9px
+
+.header__nav-link
+  +MontserratBold
+  font-size: rem(11)
+  line-height: rem(20)
+  color: #fff
+  text-transform: uppercase
+  opacity: .7
+
+  &:hover
+    opacity: 1
+
+  +respond-to(xxsmall-xsmall)
+    color: #0090d9
+    display: inline-block
+    line-height: rem(32)
+    padding: 2px 0
+
+.header__btn
+  @extend %button
+
+.header__btn--upload
+  @extend %button--green
+
+.header__btn-icon
+  margin-right: 8px
+
+.header__toggle-btn
+  display: none
+  width: 24px
+  height: 24px
+  position: relative
+  display: none
+  margin-left: 24px
+
+  &:after
+    content: ''
+    position: absolute
+    top: 6px
+    left: 4px
+    width: 16px
+    height: 2px
+    background: #fff
+    border-radius: 2px
+    box-shadow: 0 5px 0 0 #fff, 0 10px 0 0 #fff
+
+  +respond-to(xxsmall-xsmall)
+    display: block
+
+.header__close-btn
+  display: none
+
+  +respond-to(xxsmall-xsmall)
+    display: block
+    position: absolute
+    top: 12px
+    right: 10px
+    width: 24px
+    height: 24px
+    background: image-url('icons/scholarship_close.svg') center no-repeat

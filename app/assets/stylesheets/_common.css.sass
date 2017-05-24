@@ -1,0 +1,59 @@
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+
+body
+  +SourceSansRegular
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background: $body-bg
+
+h1
+  @extend %heading--h1
+
+h2
+  @extend %heading--h2
+
+h3
+  @extend %heading--h3
+
+a
+  text-decoration: none
+  color: $link-color
+
+p
+  +SourceSansRegular
+  font-size: rem(16)
+  line-height: rem(24)
+  color: $text-color
+
+.container
+  width: $container-width
+  margin: 0 auto
+
+  +respond-to(medium)
+    width: $container-medium-width
+
+  +respond-to(small)
+    width: $container-small-width
+
+  +respond-to(xxsmall-xsmall)
+    width: $container-xsmall-width
+
+.rewardexpert__mobile-visible
+  display: none
+
+  +respond-to(xxsmall-xsmall)
+    display: block
+
+.rewardexpert__mobile-invisible
+  display: block
+
+  +respond-to(xxsmall-xsmall)
+    display: none
